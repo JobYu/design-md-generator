@@ -15,8 +15,7 @@ A **Claude Code / Cursor Agent Skill** that produces a full design-system packag
 | `DESIGN.md` | Design / coding agents | How the product should look and feel |
 
 
-For curated examples, see **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)**: real-site extracts you can copy, with `DESIGN.md` and `preview.html` / `preview-dark.html` templates.  
-**This repo** provides both **generation from scratch** and **58 built-in reference examples** you can use as starting points.
+**This repo** provides **generation from scratch** (autonomous/guided modes) and **58 built-in anonymized examples** (`examples/brand-01` ~ `brand-58`) for format reference. You can also point the skill at any live website URL or design screenshot to extract a design system automatically.
 
 ## Four Generation Modes
 
@@ -69,20 +68,10 @@ The `examples/` directory contains **58 anonymized design system references** or
 3. The skill auto-detects your input type and enters the appropriate mode.
 4. By default, get `DESIGN.md`, brand-facing `README.md`, `preview.html`, and `preview-dark.html` under `design-system/` in the target project.
 
-## How this repo relates to awesome-design-md
-
-| | [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | **This project (design-md-generator)** |
-| --- | --- | --- |
-| Role | Curated `DESIGN.md` + preview HTML from real sites | Agent workflow + templates + 58 built-in examples |
-| Best for | Quickly matching well-known product visuals | Own brand, URL/image extraction, interviews, and avoiding generic "AI slop" defaults |
-
-Both aim for the same goal: **a single, agent-readable source of truth anchored in `DESIGN.md`.**
-
 ## Further reading
 
 - [Stitch: DESIGN.md overview](https://stitch.withgoogle.com/docs/design-md/overview/)
 - [Stitch: DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/)
-- [VoltAgent / Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)
 - [Custom DESIGN.md request (getdesign.md)](https://getdesign.md/request)
 
 ## License

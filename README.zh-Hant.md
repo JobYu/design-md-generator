@@ -15,8 +15,7 @@
 | `DESIGN.md` | 設計／編碼代理 | 產品應有的外觀與體感 |
 
 
-社群策展可參考 **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)**：從真實網站萃取、可直接複製的 `DESIGN.md` 與 `preview.html`／`preview-dark.html` 範本庫。  
-**本倉庫**則提供 **「從零生成」** 的代理流程、章節模板，以及 **58 個可直接參考的品牌案例**。
+**本倉庫**提供 **「從零生成」**（自主／引導模式）與 **58 個內建匿名化範例**（`examples/brand-01` ~ `brand-58`）作為格式參考。你也可以直接提供任一網站網址或設計截圖，讓 Skill 自動提取設計系統。
 
 ## 四種生成模式
 
@@ -69,20 +68,10 @@ design-md-generator/
 3. Skill 會自動偵測輸入類型並進入對應模式。
 4. 依預設，於專案的 `design-system/`（或你指定的根目錄）取得 `DESIGN.md`、`README.md`（品牌向簡介）、`preview.html`、`preview-dark.html` 等產出。
 
-## 與 awesome-design-md 的分工
-
-| | [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | **本專案（design-md-generator）** |
-| --- | --- | --- |
-| 定位 | 策展現成 DESIGN.md + 預覽 HTML | 代理流程 + 模板 + 58 個內建範例 |
-| 適用 | 快速對齊知名產品視覺語言 | 自有品牌、URL／圖片提取、訪談與反模板化（避免「AI 味」預設） |
-
-兩者都服務同一個目標：**讓 `DESIGN.md` 成為代理可讀、可執行的單一真相來源。**
-
 ## 延伸資源
 
 - [Stitch：DESIGN.md 概覽](https://stitch.withgoogle.com/docs/design-md/overview/)
 - [Stitch：DESIGN.md 格式說明](https://stitch.withgoogle.com/docs/design-md/format/)
-- [VoltAgent／Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)
 - [自訂 DESIGN.md 請求（getdesign.md）](https://getdesign.md/request)
 
 ## 授權

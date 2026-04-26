@@ -72,4 +72,3 @@ Install or reference `SKILL.md` per your agent's skill system, then use trigger 
 
 - [Google Stitch: DESIGN.md overview](https://stitch.withgoogle.com/docs/design-md/overview/)
 - [Google Stitch: DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/)
-- [VoltAgent / Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)
