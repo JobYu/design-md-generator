@@ -2,7 +2,7 @@
 
 **語言：** [English](./README.md) · 繁體中文（本頁）
 
-依專案脈絡或引導式訪談，產出符合 [Google Stitch DESIGN.md](https://stitch.withgoogle.com/docs/design-md/overview/) 精神的完整設計系統文件與預覽資產。
+依專案脈絡、網站 URL、設計截圖或引導式訪談，產出符合 [Google Stitch DESIGN.md](https://stitch.withgoogle.com/docs/design-md/overview/) 精神的完整設計系統文件與預覽資產。內建 58 個品牌案例可作為參考起點。
 
 ## 什麼是 DESIGN.md？
 
@@ -16,35 +16,65 @@
 
 
 社群策展可參考 **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)**：從真實網站萃取、可直接複製的 `DESIGN.md` 與 `preview.html`／`preview-dark.html` 範本庫。  
-**本倉庫**則提供 **「從零生成」** 的流程與章節模板（見 `[SKILL.md](./SKILL.md)`），適合自有產品、尚無現成 DESIGN.md 可抄的情境。
+**本倉庫**則提供 **「從零生成」** 的代理流程、章節模板，以及 **58 個可直接參考的品牌案例**。
 
-## 本倉庫內容
+## 四種生成模式
 
+Skill 會自動偵測你的輸入類型，並選擇最適合的模式：
 
-| 檔案                       | 說明                                                                                                      |
-| ------------------------ | ------------------------------------------------------------------------------------------------------- |
-| `[SKILL.md](./SKILL.md)` | **design-md-generator**：觸發條件、自主／引導雙模式、九章主模板、行動 App 擴充章節、反模式檢查清單，以及預設輸出的 **四件套**（`design-system/` 目錄）規格。 |
+| 模式 | 輸入 | 作用 |
+|------|------|------|
+| **自主模式** | 現有專案檔案（`README.md`、`package.json`、樣式檔） | 分析脈絡並自動生成 DESIGN.md |
+| **URL 分析** | 網站網址（`https://...`） | 從實際網頁提取顏色、字體、元件與布局 |
+| **圖片分析** | 設計截圖或 Mockup | 從設計圖片識別視覺元素 |
+| **引導模式** | 文字描述或無輸入 | 逐步訪談產品氣質與限制 |
 
+若 URL／圖片分析的資料不完整，Skill 會自動進入 **引導式補全**——只問缺失的欄位，而非從頭問完整套問題。
 
-Skill 會引導代理產出與 [Stitch DESIGN.md 格式](https://stitch.withgoogle.com/docs/design-md/format/) 對齊的章節，並可延伸微互動預覽、明暗雙預覽等（細節以 `SKILL.md` 為準）。
+## 倉庫結構
+
+```
+design-md-generator/
+├── SKILL.md                    # 核心 Skill 編排器（< 500 行）
+├── references/                 # 詳細指令與模板（按需載入）
+│   ├── modes.md                # 四種模式的詳細提取／訪談流程
+│   ├── master-template.md      # DESIGN.md 模板（九章）＋行動 App 擴充
+│   └── output-specs.md         # 預覽 HTML 規格、README 模板、原生片段
+└── examples/                   # 58 個匿名化設計系統參考案例
+    ├── brand-01/
+    ├── brand-02/
+    ├── brand-03/
+    └── ... (brand-01 ~ brand-58，各含一份 DESIGN.md)
+```
+
+### 內建範例（`examples/`）
+
+`examples/` 目錄收錄了 **58 個匿名化設計系統參考案例**，源自真實網站的公開視覺風格觀察。每個子目錄（`brand-01` ~ `brand-58`）包含一份 `DESIGN.md`，品牌標識已移除。用途包括：
+
+- **格式參考** — 觀察優質 DESIGN.md 的結構與寫法
+- **改寫起點** — 依此結構為自有產品編寫設計系統
+- **學習素材** — 建立對顏色、字體、元件規格的直覺
+
+> **注意：** 這些文件是對公開可見設計模式的觀察性分析，非官方品牌設計系統。所有品牌名稱已匿名化以避免商標問題。
 
 ## 使用方式
 
-1. 將本倉庫的 `SKILL.md` 依 Cursor 的 [Agent Skills](https://docs.cursor.com) 方式安裝或引用（路徑依你的技能目錄設定而定）。
-2. 在對話中使用觸發語，例如：**「生成 DESIGN.md」**、**「幫我做設計系統文件」**、**「產品視覺規範」** 等（完整列表見 `SKILL.md` 前端的 `triggers`）。
-3. 選擇 **自主模式**（分析現有 README、樣式檔、技術棧）或 **引導模式**（逐步訪談產品氣質與限制）。
-4. 依 Skill 預設，於專案的 `design-system/`（或你指定的根目錄）取得 `DESIGN.md`、`README.md`（品牌向簡介）、`preview.html`、`preview-dark.html` 等產出。
-
-若你希望介面風格接近某個已公開的 DESIGN.md，可先從 [awesome-design-md 列表](https://github.com/VoltAgent/awesome-design-md) 挑選參考，再請代理在生成時對齊該風格或合併你的產品需求。
+1. 將本倉庫的 `SKILL.md` 依你的 Agent Skill 系統安裝或引用（路徑依你的技能目錄設定而定）。
+2. 在對話中使用觸發語：
+   - **「生成 DESIGN.md」**
+   - **「分析這個網站設計」** / **"design from url"**
+   - **「從這張圖片生成設計系統」** / **"design from image"**
+   - **「產品視覺規範」** / **"design system document"**
+   （完整列表見 `SKILL.md` 前端的 `triggers`）
+3. Skill 會自動偵測輸入類型並進入對應模式。
+4. 依預設，於專案的 `design-system/`（或你指定的根目錄）取得 `DESIGN.md`、`README.md`（品牌向簡介）、`preview.html`、`preview-dark.html` 等產出。
 
 ## 與 awesome-design-md 的分工
 
-
-|     | [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | **本專案（design-md-generator）** |
-| --- | ------------------------------------------------------------------- | ---------------------------- |
-| 定位  | 策展現成 DESIGN.md + 預覽 HTML                                            | 定義「如何從頭寫一組」的代理流程與模板          |
-| 適用  | 快速對齊知名產品視覺語言                                                        | 自有品牌、需訪談與反模板化（避免「AI 味」預設）    |
-
+| | [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | **本專案（design-md-generator）** |
+| --- | --- | --- |
+| 定位 | 策展現成 DESIGN.md + 預覽 HTML | 代理流程 + 模板 + 58 個內建範例 |
+| 適用 | 快速對齊知名產品視覺語言 | 自有品牌、URL／圖片提取、訪談與反模板化（避免「AI 味」預設） |
 
 兩者都服務同一個目標：**讓 `DESIGN.md` 成為代理可讀、可執行的單一真相來源。**
 
