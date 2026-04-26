@@ -34,16 +34,15 @@ Skill 會自動偵測你的輸入類型，並選擇最適合的模式：
 
 ```
 design-md-generator/
-├── SKILL.md                    # 核心 Skill 編排器（< 500 行）
-├── references/                 # 詳細指令與模板（按需載入）
-│   ├── modes.md                # 四種模式的詳細提取／訪談流程
-│   ├── master-template.md      # DESIGN.md 模板（九章）＋行動 App 擴充
-│   └── output-specs.md         # 預覽 HTML 規格、README 模板、原生片段
-└── examples/                   # 58 個匿名化設計系統參考案例
-    ├── brand-01/
-    ├── brand-02/
-    ├── brand-03/
-    └── ... (brand-01 ~ brand-58，各含一份 DESIGN.md)
+├── SKILL.md                    # 單檔 Skill：編排器、四種模式、模板、輸出規格
+├── examples/                   # 58 個匿名化設計系統參考案例
+│   ├── brand-01/
+│   ├── brand-02/
+│   ├── brand-03/
+│   └── ... (brand-01 ~ brand-58，各含一份 DESIGN.md)
+├── README.md                   # 專案文件（英文）
+├── README.zh-Hant.md           # 專案文件（繁體中文）
+└── LICENSE                     # MIT 授權
 ```
 
 ### 內建範例（`examples/`）

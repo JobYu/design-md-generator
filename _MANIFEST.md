@@ -12,16 +12,12 @@ A **Claude Code / Cursor Agent Skill** that produces a full design-system packag
 
 ```
 design-md-generator/
-├── SKILL.md                    # Core skill definition (orchestrator, < 500 lines)
+├── SKILL.md                    # Core skill definition (orchestrator + modes + template + output specs)
 ├── README.md                   # Project documentation (EN)
 ├── README.zh-Hant.md           # Project documentation (ZH-TW)
 ├── LICENSE                     # MIT License
 ├── .gitignore                  # Git ignore rules
 ├── _MANIFEST.md                # This file
-├── references/                 # Detailed mode instructions & templates (loaded on demand)
-│   ├── modes.md                # Autonomous, URL, Image, Guided mode details
-│   ├── master-template.md      # DESIGN.md template + Mobile App Extension
-│   └── output-specs.md         # Output file specifications (preview.html, README, native snippets)
 └── examples/                   # 58 anonymized DESIGN.md references from real-world brands
     ├── brand-01/
     ├── brand-02/
@@ -33,10 +29,7 @@ design-md-generator/
 
 | File | Purpose |
 |------|---------|
-| `SKILL.md` | Skill orchestrator (< 500 lines). Input detection, mode routing, Data Sufficiency Check, anti-patterns, output instructions. |
-| `references/modes.md` | Detailed extraction procedures for all 4 modes (Autonomous, URL, Image, Guided). |
-| `references/master-template.md` | The full DESIGN.md template (9 chapters) + Mobile App Extension (chapters 10-12). |
-| `references/output-specs.md` | Detailed specs for `preview.html`, `preview-dark.html`, `README.md` template, and native preview snippets. |
+| `SKILL.md` | Single-file skill orchestrator. Contains: input detection, mode routing, Data Sufficiency Check, anti-patterns, 4 mode instructions (Autonomous/URL/Image/Guided), DESIGN.md Master Template + Mobile Extension, and output file specifications. |
 | `examples/` | 58 anonymized DESIGN.md references from real-world brands. Each subdir (`brand-01` ~ `brand-58`) contains one `DESIGN.md` with brand names removed. |
 
 ## Modes

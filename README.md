@@ -34,16 +34,15 @@ If data from URL/Image analysis is incomplete, the skill automatically enters **
 
 ```
 design-md-generator/
-├── SKILL.md                    # Core skill orchestrator (< 500 lines)
-├── references/
-│   ├── modes.md                # Detailed extraction procedures for all 4 modes
-│   ├── master-template.md      # DESIGN.md template (9 chapters) + Mobile extension
-│   └── output-specs.md         # Preview HTML specs, README template, native snippets
-└── examples/                   # 58 anonymized DESIGN.md references from real-world brands
-    ├── brand-01/
-    ├── brand-02/
-    ├── brand-03/
-    └── ... (brand-01 ~ brand-58, each contains one DESIGN.md)
+├── SKILL.md                    # Single-file skill: orchestrator, modes, template, output specs
+├── examples/                   # 58 anonymized DESIGN.md references from real-world brands
+│   ├── brand-01/
+│   ├── brand-02/
+│   ├── brand-03/
+│   └── ... (brand-01 ~ brand-58, each contains one DESIGN.md)
+├── README.md                   # Project documentation (EN)
+├── README.zh-Hant.md           # Project documentation (ZH-TW)
+└── LICENSE                     # MIT License
 ```
 
 ### Built-in Examples (`examples/`)
